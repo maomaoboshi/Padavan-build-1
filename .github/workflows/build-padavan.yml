@@ -104,18 +104,19 @@ jobs:
       with:
         name: Padavan-packages
         path: /opt/images
-    - name: Upload to release
-      uses: svenstaro/upload-release-action@v1-release
+    - name: Prepare
+      id: prepare
+      run: |
+        cd /opt/images
+        md5sum *.trx | tee readme.txt
+        echo ${{ github.event.client_payload.config }} | sed 's/ /\n/g' >> readme.txt
+        echo "::set-output name=tag_name::$(TZ='Asia/Shanghai' date '+v%Y.%m.%d')"
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      if: github.event.action == 'release'
       with:
-        repo_token: ${{ secrets.R_TOKEN }}
-        file: /opt/images/*.trx
-        tag: AtuoBuild
-        overwrite: true
-        file_glob: true
-    - uses: ncipollo/release-action@v1
-      with:
-       bodyFile: "changelog.md"
-       tag: AtuoBuild
-       allowUpdates: true
-       name: Padavan-firmware
-       token: ${{ secrets.R_TOKEN }}
+        tag_name: ${{ steps.prepare.outputs.tag_name }}
+        body_path: /opt/images/readme.txt
+        files: /opt/images/*
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
