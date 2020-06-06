@@ -1,2 +1,2 @@
 # Padavan-build 
-# 修改，保存，自动编译。
+编译适用于Newifi3的Padavan固件
