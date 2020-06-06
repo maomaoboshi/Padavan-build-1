@@ -104,3 +104,19 @@ jobs:
       with:
         name: Padavan-packages
         path: /opt/images
+    - name: Prepare
+      id: prepare
+      run: |
+        cd /opt/images
+        md5sum *.trx | tee readme.txt
+        echo ${{ github.event.client_payload.config }} | sed 's/ /\n/g' >> readme.txt
+        echo "::set-output name=tag_name::$(TZ='Asia/Shanghai' date '+v%Y.%m.%d')"
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      if: github.event.action == 'release'
+      with:
+        tag_name: ${{ steps.prepare.outputs.tag_name }}
+        body_path: /opt/images/readme.txt
+        files: /opt/images/*
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
