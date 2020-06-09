@@ -46,7 +46,6 @@ jobs:
         exit 1
         fi
         cp -f configs/templates/$TNAME.config .config
-        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE.*=.*/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/g' .config
         sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_MENTOHUST.*=.*/CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n/g' .config
         sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT.*=.*/CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT=n/g' .config
         sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS.*=.*/CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y/g' .config #SS Plus
@@ -59,7 +58,6 @@ jobs:
         sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_ALIDDNS.*=.*/CONFIG_FIRMWARE_INCLUDE_ALIDDNS=n/g' .config
         sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SMARTDNS.*=.*/CONFIG_FIRMWARE_INCLUDE_SMARTDNS=n/g' .config
         sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SRELAY.*=.*/CONFIG_FIRMWARE_INCLUDE_SRELAY=n/g' .config
-        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE.*=.*/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/g' .config
         ######################################################################
         echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=y" >> .config # simple-obfs混淆插件
         echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=y" >> .config #集成v2ray执行文件（3.8M左右)，如果不集成，会从网上下载下来执行，不影响正常使用
@@ -69,11 +67,6 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=n" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_WYY=n" >> .config #网易云解锁
         echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=n" >> .config #zerotier ~1.3M
-        #########################################################################################
-        #自定义添加其它功能请参考源码configs/templates/目录下的config文件。按照上面的格式添加即可
-        #格式如下：
-        #sed -i '/自定义项/d' .config
-        #echo "自定义项=y" >> .config
         #########################################################################################
         sudo ./clear_tree
         sudo ./build_firmware_modify $TNAME 0
