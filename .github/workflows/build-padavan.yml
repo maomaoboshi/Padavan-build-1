@@ -72,7 +72,8 @@ jobs:
         sed -i 's/.*CONFIG_FIRMWARE_ENABLE_U2EC.*=.*/CONFIG_FIRMWARE_ENABLE_U2EC=n/g' .config
         sed -i 's/.*CONFIG_FIRMWARE_ENABLE_PARTED.*=.*/CONFIG_FIRMWARE_ENABLE_PARTED=n/g' .config
         sed -i 's/.*CONFIG_FIRMWARE_ENABLE_SMBD.*=.*/CONFIG_FIRMWARE_ENABLE_SMBD=n/g' .config
-        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_SMBD36.*=.*/CONFIG_FIRMWARE_ENABLE_SMBD36=n/g' .config 
+        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_SMBD36.*=.*/CONFIG_FIRMWARE_ENABLE_SMBD36=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_XUPNPD.*=.*/CONFIG_FIRMWARE_ENABLE_XUPNPD=n/g' .config
         ######################################################################
         echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=y" >> .config # simple-obfs混淆插件
         echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=y" >> .config #集成v2ray执行文件（3.8M左右)，如果不集成，会从网上下载下来执行，不影响正常使用
