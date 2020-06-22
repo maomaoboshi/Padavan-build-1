@@ -1,4 +1,4 @@
-#修改TNAME: K2P-5.0 中的K2P-5.0为你需要编译的型号，注意名称要与configs/templates/目录下的名字相同
+#修改TNAME为你需要编译的型号，注意名称要与configs/templates/目录下的名字相同
 name: Build Padavan
 
 on: 
@@ -46,43 +46,42 @@ jobs:
         exit 1
         fi
         cp -f configs/templates/$TNAME.config .config
-        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_MENTOHUST.*=.*/CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n/g' .config
-        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT.*=.*/CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT=n/g' .config
-        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS.*=.*/CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y/g' .config #SS Plus
-        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SSSERVER.*=.*/CONFIG_FIRMWARE_INCLUDE_SSSERVER=n/g' .config
-        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER.*=.*/CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER=n/g' .config
-        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_ADBYBY.*=.*/CONFIG_FIRMWARE_INCLUDE_ADBYBY=n/g' .config
-        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_FRPC.*=.*/CONFIG_FIRMWARE_INCLUDE_FRPC=n/g' .config
-        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_FRPS.*=.*/CONFIG_FIRMWARE_INCLUDE_FRPS=n/g' .config
-        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_TUNSAFE.*=.*/CONFIG_FIRMWARE_INCLUDE_TUNSAFE=n/g' .config
-        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_ALIDDNS.*=.*/CONFIG_FIRMWARE_INCLUDE_ALIDDNS=n/g' .config
-        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SMARTDNS.*=.*/CONFIG_FIRMWARE_INCLUDE_SMARTDNS=n/g' .config
-        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SRELAY.*=.*/CONFIG_FIRMWARE_INCLUDE_SRELAY=n/g' .config    
+
         sed -i 's/.*CONFIG_FIRMWARE_ENABLE_USB.*=.*/CONFIG_FIRMWARE_ENABLE_USB=n/g' .config
-        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_SERIAL.*=.*/CONFIG_FIRMWARE_ENABLE_SERIAL=n/g' .config
-        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_AUDIO.*=.*/CONFIG_FIRMWARE_ENABLE_AUDIO=n/g' .config
         sed -i 's/.*CONFIG_FIRMWARE_ENABLE_UFSD.*=.*/CONFIG_FIRMWARE_ENABLE_UFSD=n/g' .config
         sed -i 's/.*CONFIG_FIRMWARE_ENABLE_FAT.*=.*/CONFIG_FIRMWARE_ENABLE_FAT=n/g' .config
         sed -i 's/.*CONFIG_FIRMWARE_ENABLE_EXFAT.*=.*/CONFIG_FIRMWARE_ENABLE_EXFAT=n/g' .config
         sed -i 's/.*CONFIG_FIRMWARE_ENABLE_EXT2.*=.*/CONFIG_FIRMWARE_ENABLE_EXT2=n/g' .config
         sed -i 's/.*CONFIG_FIRMWARE_ENABLE_EXT3.*=.*/CONFIG_FIRMWARE_ENABLE_EXT3=n/g' .config
         sed -i 's/.*CONFIG_FIRMWARE_ENABLE_FUSE.*=.*/CONFIG_FIRMWARE_ENABLE_FUSE=n/g' .config
-        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_UVC.*=.*/CONFIG_FIRMWARE_ENABLE_UVC=n/g' .config
-        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_LPRD.*=.*/CONFIG_FIRMWARE_ENABLE_LPRD=n/g' .config
-        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_U2EC.*=.*/CONFIG_FIRMWARE_ENABLE_U2EC=n/g' .config
-        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_PARTED.*=.*/CONFIG_FIRMWARE_ENABLE_PARTED=n/g' .config
-        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_SMBD.*=.*/CONFIG_FIRMWARE_ENABLE_SMBD=n/g' .config
-        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_SMBD36.*=.*/CONFIG_FIRMWARE_ENABLE_SMBD36=n/g' .config
-        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_XUPNPD.*=.*/CONFIG_FIRMWARE_ENABLE_XUPNPD=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_UVC.*=.*/CONFIG_FIRMWARE_INCLUDE_UVC=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SERIAL.*=.*/CONFIG_FIRMWARE_INCLUDE_SERIAL=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_AUDIO.*=.*/CONFIG_FIRMWARE_INCLUDE_AUDIO=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_LPRD.*=.*/CONFIG_FIRMWARE_INCLUDE_LPRD=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_U2EC.*=.*/CONFIG_FIRMWARE_INCLUDE_U2EC=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_TCPDUMP.*=.*/CONFIG_FIRMWARE_INCLUDE_TCPDUMP=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_PARTED.*=.*/CONFIG_FIRMWARE_INCLUDE_PARTED=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SMBD.*=.*/CONFIG_FIRMWARE_INCLUDE_SMBD=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SMBD36.*=.*/CONFIG_FIRMWARE_INCLUDE_SMBD36=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_FTPD.*=.*/CONFIG_FIRMWARE_INCLUDE_FTPD=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_XUPNPD.*=.*/CONFIG_FIRMWARE_INCLUDE_XUPNPD=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW.*=.*/CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_ARIA.*=.*/CONFIG_FIRMWARE_INCLUDE_ARIA=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL.*=.*/CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT.*=.*/CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS.*=.*/CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SSSERVER.*=.*/CONFIG_FIRMWARE_INCLUDE_SSSERVER=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_SERVER.*=.*/CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_SERVER=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CLIENT.*=.*/CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CLIENT=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CMD.*=.*/CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CMD=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER.*=.*/CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_MTR.*=.*/CONFIG_FIRMWARE_INCLUDE_MTR=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SOCAT.*=.*/CONFIG_FIRMWARE_INCLUDE_SOCAT=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SRELAY.*=.*/CONFIG_FIRMWARE_INCLUDE_SRELAY=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_MENTOHUST.*=.*/CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n/g' .config
+ 
         ######################################################################
-        echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=y" >> .config # simple-obfs混淆插件
-        echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=y" >> .config #集成v2ray执行文件（3.8M左右)，如果不集成，会从网上下载下来执行，不影响正常使用
         echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=y" >> .config #集成trojan执行文件(1.1M左右)，如果不集成，会从网上下载下来执行，不影响正常使用
-        echo "CONFIG_FIRMWARE_INCLUDE_KOOLPROXY=n" >> .config #KP广告过滤
-        echo "CONFIG_FIRMWARE_INCLUDE_CADDY=n" >> .config #在线文件管理服务
-        echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=n" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_WYY=n" >> .config #网易云解锁
-        echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=n" >> .config #zerotier ~1.3M
         #########################################################################################
         sudo ./clear_tree
         sudo ./build_firmware_modify $TNAME 0
