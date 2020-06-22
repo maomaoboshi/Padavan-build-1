@@ -58,6 +58,18 @@ jobs:
         sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_ALIDDNS.*=.*/CONFIG_FIRMWARE_INCLUDE_ALIDDNS=n/g' .config
         sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SMARTDNS.*=.*/CONFIG_FIRMWARE_INCLUDE_SMARTDNS=n/g' .config
         sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SRELAY.*=.*/CONFIG_FIRMWARE_INCLUDE_SRELAY=n/g' .config
+        
+        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_USB.*=.*/CONFIG_FIRMWARE_ENABLE_USB=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_HID.*=.*/CONFIG_FIRMWARE_ENABLE_HID=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_SERIAL.*=.*/CONFIG_FIRMWARE_ENABLE_SERIAL=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_UFSD.*=.*/CONFIG_FIRMWARE_ENABLE_UFSD=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_FAT.*=.*/CONFIG_FIRMWARE_ENABLE_FAT=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_EXFAT.*=.*/CONFIG_FIRMWARE_ENABLE_EXFAT=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_EXT2.*=.*/CONFIG_FIRMWARE_ENABLE_EXT2=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_EXT3.*=.*/CONFIG_FIRMWARE_ENABLE_EXT3=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_XFS.*=.*/CONFIG_FIRMWARE_ENABLE_XFS=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_FUSE.*=.*/CONFIG_FIRMWARE_ENABLE_FUSE=n/g' .config
+        sed -i 's/.*CONFIG_FIRMWARE_ENABLE_UVC.*=.*/CONFIG_FIRMWARE_ENABLE_UVC=n/g' .config
         ######################################################################
         echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=y" >> .config # simple-obfs混淆插件
         echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=y" >> .config #集成v2ray执行文件（3.8M左右)，如果不集成，会从网上下载下来执行，不影响正常使用
