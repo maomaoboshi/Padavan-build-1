@@ -80,7 +80,6 @@ jobs:
         sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_SRELAY.*=.*/CONFIG_FIRMWARE_INCLUDE_SRELAY=n/g' .config
         sed -i 's/.*CONFIG_FIRMWARE_INCLUDE_MENTOHUST.*=.*/CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n/g' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS/a CONFIG_FIRMWARE_INCLUDE_TROJAN=y' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS/G' .config
 
         sudo ./clear_tree
         sudo ./build_firmware_modify $TNAME 0
