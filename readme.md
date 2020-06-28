@@ -1,5 +1,6 @@
 # Padavan-build 
-9MB新路由3/Newifi D2老毛子固件
+极简新路由3老毛子固件<br>
+9MB Newifi D2 Firmware
 
 编译适用于Newifi3的Padavan固件<br>
 使用chongshengB修改版rt-n56u
