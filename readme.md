@@ -11,7 +11,7 @@
 本人只需要路由能联网，能连洋鬼子的网（好看他们的洋相，顺便赚洋钱）
 
 在Actions的Newifi3-Build里面下载成品，
-理论上，将Actions配置yml第41行TNAME后面的NEWIFI3
+理论上，将Actions配置yml第41行TNAME后面的NEWIFI3，
 改成其他rt-n56u支持的路由型号代码即可编译其他固件
 
 Fork此项目后，点自己fork后项目的Star触发Action编译，
