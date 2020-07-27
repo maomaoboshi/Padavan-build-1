@@ -101,11 +101,20 @@ jobs:
         name: Padavan-Newifi3
         path: /opt/images
 
+    - name: Get current time
+      uses: 1466587594/get-current-time@master
+      id: current-time
+      with:
+        format: YYYYMMDD-HH
+        utcOffset: "+08:00"
+      env:
+        F_TIME: "${{ steps.current-time.outputs.formattedTime }}"
+
     - name: Upload binaries to release
       uses: svenstaro/upload-release-action@master
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: /opt/images/*.trx
-        tag: AutoBuild
+        tag: $F_TIME
         overwrite: true
         file_glob: true
