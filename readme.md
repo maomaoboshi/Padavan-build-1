@@ -12,6 +12,7 @@ https://github.com/chongshengB/rt-n56u
 需要在路由上使用上网之外功能的请离开<br>
 本人只需要路由能联网，能连洋鬼子的网（看洋相，赚洋钱）
 
+
 在Actions的Newifi3-Build里面下载成品<br>
 理论上，将Actions配置yml第41行TNAME后面的NEWIFI3<br>
 改成其他rt-n56u支持的路由型号代码即可编译其他固件
