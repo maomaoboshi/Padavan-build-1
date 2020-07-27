@@ -4,6 +4,7 @@
 
 编译适用于Newifi3的Padavan固件<br>
 使用chongshengB修改版rt-n56u
+https://github.com/chongshengB/rt-n56u
 
 删除基本路由之外的附加功能<br>
 添加唯一需要的穿墙木马DA法
