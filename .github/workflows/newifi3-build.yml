@@ -116,6 +116,6 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: /opt/images/*.trx
         tag: CI-Build
-        release_name: F_TIME
+        asset_name: 
         overwrite: true
-        file_glob: true
+        overwrite: true
