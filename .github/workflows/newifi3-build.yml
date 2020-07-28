@@ -100,7 +100,7 @@ jobs:
         path: /opt/images
 
     - name: Get current time
-      uses: 1466587594/get-current-time@master
+      uses: iboosting/get-current-time@master
       id: current-time
       with:
         format: YYYYMMDD-HH
@@ -108,11 +108,9 @@ jobs:
 
     - name: Upload binaries to release
       uses: svenstaro/upload-release-action@master
-      env:
-        F_TIME: "${{ steps.current-time.outputs.formattedTime }}"
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: /opt/images/*.trx
-        tag: $F_TIME
+        tag: ${{ steps.current-time.outputs.formattedTime }}
         file_glob: true
         overwrite: true
