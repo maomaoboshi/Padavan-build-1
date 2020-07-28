@@ -105,11 +105,11 @@ jobs:
       with:
         format: YYYYMMDD-HH
         utcOffset: "+08:00"
-      env:
-        F_TIME: "${{ steps.current-time.outputs.formattedTime }}"
 
     - name: Upload binaries to release
       uses: svenstaro/upload-release-action@master
+      env:
+        F_TIME: "${{ steps.current-time.outputs.formattedTime }}"
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: /opt/images/*.trx
