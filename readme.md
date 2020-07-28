@@ -10,7 +10,7 @@ https://github.com/chongshengB/rt-n56u
 添加唯一需要的穿墙木马DA法
 
 需要在路由上使用上网之外功能的请离开<br>
-本人只需要路由能联网，能连洋鬼子的网（看洋相，赚洋钱）
+本人只需要路由能联网，能连洋鬼子的网
 
 
 在Actions的Newifi3-Build里面下载成品<br>
