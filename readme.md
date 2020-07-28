@@ -16,5 +16,5 @@ https://github.com/chongshengB/rt-n56u
 改成其他rt-n56u支持的路由型号代码即可编译其他固件
 
 每周日晚上11点(北京时间)自动Action构建<br>
-每次更新此项目或点击Star触发Action构建<br>
-需要再次编译时，Unstar然后重新Star即可
+每次点击仓库的Star可手动触发Action构建<br>
+需要再次构建时，Unstar然后重新Star即可
