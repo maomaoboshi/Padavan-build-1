@@ -115,6 +115,6 @@ jobs:
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: /opt/images/*.trx
-        tag: CI-Build
-        asset_name: NEWIFI3-F_TIME.trx
+        tag: F_TIME
+        file_glob: true
         overwrite: true
